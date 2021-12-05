@@ -15,11 +15,12 @@ export const useFetch = (url) => {
       return axios
         .get(url, { signal: controller.signal})
         .then(response => {
-          if (!response.ok) {
+          
+          if (response.statusText !== "OK") {
             throw new Error(response.statusText)
           }
 
-          const data = response.json()
+          const data = response.data
           setData(data)
           setError(null)
         })
