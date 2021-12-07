@@ -5,8 +5,10 @@ import { useParams } from 'react-router-dom';
 
 // styles
 import './Recipe.css'
+import { useTheme } from '../../hooks/useTheme';
 
 const Recipe = () => {
+  const { mode } = useTheme()
   const { id } = useParams()
   const url = `http://localhost:3000/recipes/${id}`
 
@@ -14,7 +16,7 @@ const Recipe = () => {
 
 
   return ( 
-    <div className="recipe">
+    <div className={`recipe ${mode}`}>
        { isPending && <p className="loading">Loading...</p> }
        { error && <div className="error">{error}</div> }
        { recipe && 
