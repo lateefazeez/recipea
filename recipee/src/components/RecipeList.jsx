@@ -6,6 +6,10 @@ import "./RecipeList.css"
 const RecipeList = (props) => {
   const { recipes } = props
 
+  if (recipes.length === 0) {
+    return <div className="error">There are no recipes found </div>
+  }
+
 
   return ( 
     <div className="recipe-list">
