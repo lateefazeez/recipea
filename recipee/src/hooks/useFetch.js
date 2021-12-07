@@ -8,6 +8,14 @@ export const useFetch = (url) => {
   const [isPending, setIsPending] = useState(false)
   const [error, setError] = useState(null)
 
+  const postRecipe = (url, recipe) => {
+    return axios
+      .post(url, { ...recipe })
+      .then(response => {
+        return response
+      })
+  }
+
   useEffect(() => {
     const controller = new AbortController()
 
@@ -40,5 +48,5 @@ export const useFetch = (url) => {
     }
   }, [url])
 
-  return { data, isPending, error }
+  return { data, isPending, error, postRecipe }
 }

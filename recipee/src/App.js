@@ -14,7 +14,7 @@ function App() {
       <Route exact path="/" element={ <Home />} />
       <Route path="/create" element={ <Create />} />
       <Route path="/recipes/:id" element={ <Recipe />} />
-      <Route path="search" element={ <Search />} />
+      <Route path="/search" element={ <Search />} />
     </Routes>
     </div>
   );

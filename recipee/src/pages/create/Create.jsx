@@ -1,4 +1,6 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import { useNavigate} from "react-router-dom"
+import { useFetch } from '../../hooks/useFetch'
 
 // styles
 import './Create.css'
@@ -7,11 +9,36 @@ const Create = () => {
   const [title, setTitle] = useState("")
   const [method, setMethod] = useState("")
   const [cookingTime, setCookingTime] = useState("")
+  const [ingredient, setIngredient] = useState("")
+  const [ingredients, setIngredients] = useState([])
+  const ingredientInput = useRef(null)
+  const navigate = useNavigate()
+
+  const { postRecipe } = useFetch()
+
+  const addRecipe = (e) => {
+    e.preventDefault()
+    if (ingredient && !ingredients.includes(ingredient)) {
+      setIngredients(prevIngredients => [...prevIngredients, ingredient.trim()])
+    }
+    
+    setIngredient("")
+    ingredientInput.current.focus()
+  }
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log(title, method, cookingTime)
+    const recipe = { title, method, cookingTime, ingredients}
+    postRecipe("http://localhost:3000/recipes", recipe)
+    .then(response => {
+      console.log("FRONT", response)
+      if(response.status === 201) {
+        navigate("/")
+      }
+    })
   }
+
+ 
 
   return ( 
     <div className="create">
@@ -27,7 +54,24 @@ const Create = () => {
             required
           />
         </label>
-        {/* {ingredients} */}
+        
+        <label>
+          <span>Recipe Ingredients</span>
+          <div className="ingredients">
+            <input 
+              type="text"
+              className="recipe-input"
+              onChange={(e) => setIngredient(e.target.value)} 
+              value={ingredient}
+              ref={ingredientInput}
+            />
+            <button className="btn" onClick={addRecipe}>Add</button>
+          </div>
+          
+        </label>
+
+        {<p>{ingredients.join(", ")}</p>}
+
         <label>
           <span>Recipe Method:</span>
           <textarea 

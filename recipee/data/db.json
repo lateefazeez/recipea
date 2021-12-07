@@ -36,6 +36,106 @@
       ],
       "method": "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse minima ex rem quis similique eum ratione quaerat, voluptas molestias ut repudiandae delectus voluptates. Eius esse at tenetur ab accusamus excepturi?",
       "cookingTime": "35 minutes"
+    },
+    {
+      "title": "gbegiri",
+      "method": "just cook it",
+      "cookingTime": "25",
+      "ingredients": [
+        "beans",
+        "palm oil",
+        "maggi"
+      ],
+      "id": "hwS3nsb"
+    },
+    {
+      "title": "Fried Rice",
+      "method": "Cook the fried rice until it fries",
+      "cookingTime": "18",
+      "ingredients": [],
+      "id": "cmA6niQ"
+    },
+    {
+      "title": "fddfsdf",
+      "method": "dfsgdfgf",
+      "cookingTime": "3",
+      "ingredients": [
+        "beans"
+      ],
+      "id": "Sm-4JLZ"
+    },
+    {
+      "title": "Test Recipe",
+      "method": "Cook it",
+      "cookingTime": "24",
+      "ingredients": [
+        "Garri",
+        "Yam"
+      ],
+      "id": "TSo48Pe"
+    },
+    {
+      "title": "Jolloff Rice",
+      "method": "Prepare the rice and cook with the ingredients",
+      "cookingTime": "5",
+      "ingredients": [
+        "rice",
+        "oil",
+        "garlic",
+        "onions"
+      ],
+      "id": "1KRQnRh"
+    },
+    {
+      "title": "Ofada",
+      "method": "wash the ofada wella",
+      "cookingTime": "30",
+      "ingredients": [
+        "ofada rice",
+        "pepper"
+      ],
+      "id": "l64bvol"
+    },
+    {
+      "title": "adfasdfd",
+      "method": "sdfsdfd",
+      "cookingTime": "3",
+      "ingredients": [
+        "efefe",
+        "fdfdf"
+      ],
+      "id": "MRz09B4"
+    },
+    {
+      "title": "srfsdfg",
+      "method": "dfsfsdffgdg",
+      "cookingTime": "3",
+      "ingredients": [
+        "dfdgfsd",
+        "dsfgdgsgdf"
+      ],
+      "id": "FO9cZA6"
+    },
+    {
+      "title": "dsfdfsdf",
+      "method": "WDFAWDFAW",
+      "cookingTime": "2",
+      "ingredients": [
+        "dfdsf",
+        "dsfsdfefQA"
+      ],
+      "id": "-j2sQz-"
+    },
+    {
+      "title": "edfwfger",
+      "method": "etetrgegr",
+      "cookingTime": "4",
+      "ingredients": [
+        "ergeget",
+        "gergrt",
+        "rgergrg"
+      ],
+      "id": "hNKzsr-"
     }
   ]
 }

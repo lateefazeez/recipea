@@ -27,3 +27,12 @@
   text-decoration: none;
   margin: 20px auto;
 }
+
+.ingredients {
+  display: flex;
+  align-items: center;
+}
+
+.recipe-input {
+  margin-right: 1rem;
+}
