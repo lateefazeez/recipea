@@ -1,7 +1,7 @@
 # Recipea
 A recipe web app created for food lovers to create a food recipe that they love
 
-This app is built with react in the front-end and an in-store memory for now. 
+This app is built with react in the front-end and firebase-firestore as database. 
 
 ## Setup
 
