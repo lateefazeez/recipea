@@ -1,19 +1,23 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
+// Import the functions you need from the SDKs you need
+import firebase from "firebase/app";
+import  "firebase/firestore";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
+// Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  apiKey: "AIzaSyDfVJo0tEDn_Dxr3Lsh54Hk2CE3WCALpeo",
   authDomain: "recipea-site.firebaseapp.com",
   projectId: "recipea-site",
   storageBucket: "recipea-site.appspot.com",
-  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.REACT_APP_FIREBASE_APP_ID
+  messagingSenderId: "941210206241",
+  appId: "1:941210206241:web:d489f12e693c147194e360"
 };
 
-// init app
-firebase.initializeApp(firebaseConfig)
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-// init services
+//initialize services
 const recipeaFirestore = firebase.firestore()
 
 export { recipeaFirestore }
