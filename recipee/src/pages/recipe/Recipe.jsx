@@ -19,8 +19,7 @@ const Recipe = () => {
   useEffect(() => {
     setIsPending(true)
 
-    recipeaFirestore.collection('recipes').doc(id).get()
-      .then(doc => {
+    const unsub = recipeaFirestore.collection('recipes').doc(id).onSnapshot(doc => {
         if (doc.exists) {
           setIsPending(false)
           setRecipe(doc.data())
@@ -30,8 +29,15 @@ const Recipe = () => {
         }
         
       })
+
+      return () => unsub()
   }, [id])
 
+  const handleUpdate = () => {
+    recipeaFirestore.collection('recipes').doc(id).update({ 
+      title: "A new title"
+    })
+  }
 
 
   return ( 
@@ -46,6 +52,7 @@ const Recipe = () => {
            { recipe.ingredients.map(ing => <li key={ing}>{ing}</li>)}
          </ul>
          <p className="method">{recipe.method}</p>
+         <button className="btn update" onClick={handleUpdate}>Update</button>
        </> }
     </div>
    );
