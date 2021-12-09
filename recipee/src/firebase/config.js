@@ -6,12 +6,12 @@ import  "firebase/firestore";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDfVJo0tEDn_Dxr3Lsh54Hk2CE3WCALpeo",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "recipea-site.firebaseapp.com",
   projectId: "recipea-site",
   storageBucket: "recipea-site.appspot.com",
-  messagingSenderId: "941210206241",
-  appId: "1:941210206241:web:d489f12e693c147194e360"
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 // Initialize Firebase
