@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { useNavigate} from "react-router-dom"
-import { useFetch } from '../../hooks/useFetch'
+import { recipeaFirestore } from "../../firebase/config"
 
 // styles
 import './Create.css'
@@ -14,8 +14,6 @@ const Create = () => {
   const ingredientInput = useRef(null)
   const navigate = useNavigate()
 
-  const { postRecipe } = useFetch()
-
   const addRecipe = (e) => {
     e.preventDefault()
     if (ingredient && !ingredients.includes(ingredient)) {
@@ -28,13 +26,13 @@ const Create = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    const recipe = { title, method, cookingTime, ingredients}
-    postRecipe("http://localhost:3000/recipes", recipe)
+    const doc = { title, method, cookingTime: cookingTime + " minutes", ingredients }
+    recipeaFirestore.collection('recipes').add(doc)
     .then(response => {
-      console.log("FRONT", response)
-      if(response.status === 201) {
-        navigate("/")
-      }
+      navigate("/")
+    })
+    .catch(err => {
+      console.log(`An error occured: ${err}`)
     })
   }
 
